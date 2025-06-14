@@ -1,0 +1,58 @@
+import streamlit as st
+
+st.set_page_config(page_title="KAZAI 2.0 - Cognitive Leap Engine", layout="wide")
+st.title("🧠 KAZAI 2.0")
+st.subheader("Where Genius Meets Its Higher Self")
+
+st.markdown("""
+KAZAI transforms abstract, philosophical, or scientific prompts into multi-dimensional, deeply reasoned insights.
+Use the sliders below to shape the kind of cognitive leap you want to generate.
+""")
+
+# --- Input Prompt ---
+prompt = st.text_area("Enter your abstract prompt:", "What lies at the center of a black hole?")
+
+# --- Thought Sculpting Parameters ---
+st.markdown("### 🎛️ Sculpt Your Insight")
+
+col1, col2, col3 = st.columns(3)
+
+with col1:
+    novelty = st.slider("Novelty", 0.0, 1.0, 0.9)
+    coherence = st.slider("Coherence", 0.0, 1.0, 0.8)
+    plausibility = st.slider("Physical Plausibility", 0.0, 1.0, 0.75)
+    speculative = st.slider("Speculative Risk", 0.0, 1.0, 0.6)
+
+with col2:
+    metaphor = st.slider("Metaphorical Density", 0.0, 1.0, 0.85)
+    philosophy = st.slider("Philosophical Weight", 0.0, 1.0, 0.8)
+    self_ref = st.slider("Self-Referential Depth", 0.0, 1.0, 0.4)
+    temporal = st.slider("Temporal Abstraction", 0.0, 1.0, 0.6)
+
+with col3:
+    cross_domain = st.slider("Cross-Domain Span", 0.0, 1.0, 0.75)
+    emotional = st.selectbox("Emotional Tone", ["Neutral", "Playful", "Surreal", "Reverent", "Somber", "Awe-Inspiring"])
+
+# --- Submit Button ---
+if st.button("✨ Generate Cognitive Leap"):
+    st.markdown("## 🧠 KAZAI is thinking...")
+    st.info("This is a UI mockup. In the live system, your prompt would now pass through the KAZAI multi-agent chain with the selected parameters guiding output generation.")
+
+    st.markdown("### 🔮 Example Output")
+    st.write(f"**Prompt:** {prompt}")
+    st.write("**Final Insight:**")
+    st.success("The center of a black hole may not exist in the traditional sense. What appears to be a singular point could be a domain-shift — a dimensionless abstraction where entropy collapses into pure information, or where time no longer flows linearly. Whether it’s a bridge, a wall, or a mirror — what lies at the center may not be ‘in’ our universe at all.")
+
+    st.markdown("**Parameters Used:**")
+    st.json({
+        "Novelty": novelty,
+        "Coherence": coherence,
+        "Physical Plausibility": plausibility,
+        "Metaphorical Density": metaphor,
+        "Philosophical Weight": philosophy,
+        "Speculative Risk": speculative,
+        "Temporal Abstraction": temporal,
+        "Cross-Domain Span": cross_domain,
+        "Self-Referential Depth": self_ref,
+        "Emotional Tone": emotional
+    })
