@@ -1,0 +1,26 @@
+INSERT INTO insight_log (
+    user_prompt,
+    final_output,
+    embedding,
+    tip_score,
+    cdf_score,
+    mive_score,
+    primary_agent,
+    archetype,
+    version,
+    domain,
+    tags,
+    agent_trace
+)
+VALUES (
+    'What lies at the center of a black hole?',
+    'The center may be a domain-shift where entropy collapses into information...',
+    '[0.134, 0.982, ..., 0.112]', -- (1536-d vector)
+    0.91, 0.78, 1,
+    'Synthesizer',
+    'Einstein',
+    'RCR v2.1',
+    'physics',
+    ARRAY['high-entropy', 'speculative', 'cosmology'],
+    '{"chain": ["perception", "cradle", "diverger"], "tip": 0.91}'
+);
