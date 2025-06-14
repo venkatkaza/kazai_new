@@ -1,0 +1,6 @@
+SELECT id, user_prompt, final_output
+FROM insight_log
+WHERE tip_score > 0.85
+  AND archetype = 'Einstein'
+  AND domain = 'philosophy'
+ORDER BY tip_score DESC;
